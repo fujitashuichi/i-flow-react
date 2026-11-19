@@ -171,6 +171,7 @@ export class FlowStore<TInitial> {
   };
 }
 ```
+
 </details>
 
 ### `src/lib/react.tsx`
@@ -237,6 +238,7 @@ export class FlowBuilder<TInitial, TCurrent> {
   }
 }
 ```
+
 </details>
 
 ### `src/playground/App.tsx`
@@ -290,6 +292,7 @@ export function App() {
   );
 }
 ```
+
 </details>
 
 ---
