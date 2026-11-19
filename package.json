@@ -1,0 +1,17 @@
+{
+  "name": "i-flow-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter ./i-flow-project dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@i-flow-react/i-flow-project": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
