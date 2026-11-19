@@ -1,0 +1,11 @@
+default: true
+
+# HTMLを許可する
+MD033: false
+
+# 行長制約は無効化する
+MD013: false
+
+MD009:
+  br_spaces: 2
+  list_item_empty_lines: false
