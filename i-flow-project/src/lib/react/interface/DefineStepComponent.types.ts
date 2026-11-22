@@ -1,18 +1,18 @@
-import type { ReactNode } from "react";
 import type { StepPayload } from "./common.types";
-import type { StepViewComponent } from "./StepViewComponent.types";
+import type { StepView } from "./StepComponent.types";
+import type { StepComponent } from "./ReactFlow.types";
 
 export type DefineStepProps<
   TContext extends StepPayload,
   TOutput extends StepPayload
 > = {
   name: string;
-  component: StepViewComponent<TContext, TOutput>;
+  view: StepView<TContext, TOutput>;
 }
 
-export type DefineStepComponent = <
+export type DefineStep = <
   TContext extends StepPayload,
   TOutput extends StepPayload
 >(
   props: DefineStepProps<TContext, TOutput>
-) => ReactNode;
+) => StepComponent<TContext, TOutput>;
