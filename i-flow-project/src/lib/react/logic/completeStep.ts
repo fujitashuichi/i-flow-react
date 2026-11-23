@@ -1,5 +1,5 @@
 import type { StepPayload } from "../types/common.types";
-import type { Complete } from "../types/StepComponent.types";
+import type { Complete } from "../types/StepView.types";
 
 export const completeStep: Complete<StepPayload> = <
   TOutput extends StepPayload

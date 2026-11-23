@@ -1,6 +1,8 @@
+import type { FunctionComponent } from "react";
 import type { StepPayload } from "./common.types";
-import type { StepView } from "./StepComponent.types";
-import type { StepComponent } from "./ReactFlow.types";
+import type { StepView } from "./StepView.types";
+
+export type StepComponent = FunctionComponent;
 
 export type DefineStepProps<
   TContext extends StepPayload,

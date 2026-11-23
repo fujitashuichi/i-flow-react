@@ -1,6 +1,5 @@
 import type { StepPayload } from "../types/common.types";
-import type { DefineStep, DefineStepProps } from "../types/defineStep.types";
-import type { StepComponent } from "../types/ReactFlow.types";
+import type { DefineStep, DefineStepProps, StepComponent } from "../types/defineStep.types";
 import { completeStep } from "./completeStep";
 
 export const defineStep: DefineStep = <
