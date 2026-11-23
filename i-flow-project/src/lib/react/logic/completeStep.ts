@@ -7,5 +7,6 @@ export const completeStep: Complete<StepPayload> = <
   output: TOutput
 ) => {
   console.debug("'complete' function called.");
+  console.debug(`output: ${JSON.stringify(output)}`)
   return output;
 }

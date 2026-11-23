@@ -1,26 +1,40 @@
+import React, { useState } from 'react';
 import { defineStep, Flow } from './lib/react'
 
-const TrimNameStep = defineStep<{ name: string }, { name: string }> ({
+const TrimNameStep = defineStep<{}, { name: string }> ({
   name: "trimName",
-  View: ({ context, complete }) => {
-    // contextを渡すのは未実装なので、ダミー
-    context = { name: "太郎" };
+  View: ({ complete }) => {
+    const [done, setDone] = useState<boolean>(false);
 
-    const output = { name: context?.name.trim() ?? '' }
-    complete(output)
-    return <p>名前: {output.name}</p>
-  }
-});
+    const onCompleteHandler = (e: React.SubmitEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
 
-const GreetingStep = defineStep<{ name: string }, { greeting: string }>({
-  name: "greeting",
-  View: ({ context, complete }) => {
-    // contextを渡すのは未実装なので、ダミー
-    context = { name: "太郎" };
+      const name = formData.get("name");
+      console.debug(name);
+      if (typeof name !== "string") {
+        return alert("不正な値です。");
+      }
+
+      setDone(true);
+      complete({ name: name.trim() });
+    }
+
+    return (
+      <>
+        <form id='name-form' onSubmit={onCompleteHandler}>
+          <input
+            name='name'
+            placeholder='田中 太郎'
+            required
+          />
     
-    const greeting = `こんにちは、${context?.name ?? 'ゲスト'}さん`
-    complete({ greeting })
-    return <p>{greeting}</p>
+          <button type='submit'>実行</button>
+        </form>
+
+        <p>{done ? "完了" : "名前を入力"}</p>
+      </>
+    )
   }
 });
 
@@ -29,7 +43,6 @@ function GreetingFlow() {
   return (
     <Flow initialContext={{ name: "太郎" }}>
       {TrimNameStep}
-      {GreetingStep}
     </Flow>
   )
 }
@@ -37,10 +50,7 @@ function GreetingFlow() {
 
 function App() {
   return (
-    <>
-      <TrimNameStep />
-      <GreetingStep />
-    </>
+    <TrimNameStep />
   )
 }
 
