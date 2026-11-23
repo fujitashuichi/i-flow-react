@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter ./i-flow-project dev",
+    "lint": "pnpm --filter ./i-flow-project lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

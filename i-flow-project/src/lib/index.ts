@@ -1,4 +1,1 @@
-export {
-    "./core",
-    "./react"
-}
+export * as react from "./react";

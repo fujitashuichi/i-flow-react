@@ -2,6 +2,21 @@ import type { StepPayload } from "../types/common.types";
 import type { DefineStep, DefineStepProps, StepComponent } from "../types/defineStep.types";
 import { completeStep } from "./completeStep";
 
+/**
+ * 
+ * @example
+ * const InputNameStep = defineStep<{}, { name: string }>({
+ *  name: "inputName",
+ *  View: ({ complete }) => {
+ *    return (
+ *      <input
+ *        onSubmit={(e) => complete({ name: e.currentTarget.value })}
+ *      />
+ *    )
+ *  }
+ * })
+ */
+
 export const defineStep: DefineStep = <
   TContext extends StepPayload,
   TOutput extends StepPayload
@@ -19,15 +34,3 @@ export const defineStep: DefineStep = <
 
   return component;
 };
-
-
-const Component = defineStep<{}, { name: string }>({
-  name: "name",
-  View: ({ complete }) => {
-    return (
-      <input
-        onSubmit={(e) => complete({ name: e.currentTarget.value })}
-      />
-    )
-  }
-})
