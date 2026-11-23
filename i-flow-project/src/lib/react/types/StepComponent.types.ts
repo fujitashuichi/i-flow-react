@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "react";
+import type { ReactNode } from "react";
 import type { StepPayload } from "./common.types";
 
 export type Complete<TOutput extends StepPayload> = (
@@ -16,4 +16,6 @@ export type StepViewProps<
 export type StepView<
   TContext extends StepPayload = StepPayload,
   TOutput extends StepPayload = StepPayload
-> = FunctionComponent<StepViewProps<TContext, TOutput>>;
+> = (
+  props: StepViewProps<TContext, TOutput>
+) => ReactNode;

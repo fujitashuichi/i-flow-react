@@ -7,7 +7,7 @@ export type DefineStepProps<
   TOutput extends StepPayload
 > = {
   name: string;
-  view: StepView<TContext, TOutput>;
+  View: StepView<TContext, TOutput>;
 }
 
 export type DefineStep = <
@@ -15,4 +15,4 @@ export type DefineStep = <
   TOutput extends StepPayload
 >(
   props: DefineStepProps<TContext, TOutput>
-) => StepComponent<TContext, TOutput>;
+) => StepComponent;
