@@ -9,9 +9,11 @@ import { completeStep } from "./completeStep";
  *  name: "inputName",
  *  View: ({ complete }) => {
  *    return (
- *      <input
+ *      <button
  *        onSubmit={(e) => complete({ name: e.currentTarget.value })}
- *      />
+ *      >
+ *        submit
+ *      </button>
  *    )
  *  }
  * })
