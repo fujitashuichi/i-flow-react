@@ -6,7 +6,7 @@ import type { StepView } from "../../types/StepView.types";
 describe("defineStepとContextの整合性", () => {
     it("defineStepはViewにContextを渡す", () => {
         const ViewMock: Mock<StepView> = vi.fn(() => {
-                return <></>;
+            return <></>;
         });
 
         const StepComponent = defineStep({

@@ -26,7 +26,7 @@ export const defineStep: DefineStep = <
   { name, View }: DefineStepProps<TContext, TOutput>
 ) => {
   // contextを履歴から取得する。プロトタイプ思案中は動作しないダミーを置く
-  const currentContext = { sample: "this is sample context" } as unknown as TContext
+  const currentContext = {} as unknown as TContext;
   
   const component: StepComponent = () => {
     return (
